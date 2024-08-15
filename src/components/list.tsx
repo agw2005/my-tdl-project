@@ -1,9 +1,17 @@
-function List() {
+import Task from "./task";
+
+interface ListProps {
+  tasks: string[];
+}
+
+function List({ tasks }: ListProps) {
   return (
     <>
-      <h1 className="text-red-700 font-extrabold">
-        Lorem Ipsum Dolor Sit Amet
-      </h1>
+      <div className="w-96 min-h-96 h-auto mb-12 mx-auto border-solid border-black border-8 bg-slate-400">
+        {tasks.map((task, index) => (
+          <Task key={index} text={task} />
+        ))}
+      </div>
     </>
   );
 }

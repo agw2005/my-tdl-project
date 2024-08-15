@@ -1,9 +1,9 @@
-import List from "./components/list";
+import StateHandler from "./components/stateHandler";
 
 function App() {
   return (
     <>
-      <List />
+      <StateHandler />
     </>
   );
 }
