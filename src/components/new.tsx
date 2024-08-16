@@ -13,10 +13,10 @@ function New({ onAddTask }: NewProps) {
     clickEvent.preventDefault();
     onAddTask(task);
     setTask("");
-    //Defines a function named "handleSubmit"
+    //Defines a function named "handleSubmit" that runs when the submit button is clicked
     //Takes an event object "clickEvent" as a parameter, the type of the event is "React.FormEvent"
     //"clickEvent.preventDefault()" stops the default form submission behavior A.K.A refreshing the page
-    //onAddTask(task) thenn calls the function passed in as a prop to add the new task to the list
+    //"task" variable is then passed to addTask() in stateHandler
     //setTask('') clears the task state (variable)
   };
 
@@ -31,12 +31,12 @@ function New({ onAddTask }: NewProps) {
           name="task"
           type="text"
           placeholder="New task..."
-          value={task}
+          value={task} //setTask("") after every submit
           onChange={(clickEvent) => setTask(clickEvent.target.value)}
           //The onChange handler in React is used to detect and respond to changes in the value of form elements
           //"clickEvent" is automatically passed into the handler
           //"clickEvent.target.value" is the current value of the input field
-          //setTask(e.target.value) updates the state with this new value, keeping track of what the user is typing
+          //setTask(clickEvent.target.value) updates the state with this new value, keeping track of what the user is typing
         />
         <br />
         <input
