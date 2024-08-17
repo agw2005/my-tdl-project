@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import NewTask from "./components/NewTask";
 import { TaskObject } from "./components/TaskObject.ts";
-import List from "./components/List";
+import List from "./components/List.tsx";
 
 function App() {
   const [taskArray, setTaskArray] = useState<TaskObject[]>(() => {

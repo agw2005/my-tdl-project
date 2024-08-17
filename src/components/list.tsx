@@ -1,4 +1,4 @@
-import Task from "./Task";
+import Task from "./task.tsx";
 import { TaskObject } from "./TaskObject.ts";
 
 interface ListProps {
