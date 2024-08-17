@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import NewTask from "./components/NewTask";
-import { TaskObject } from "C:/Users/dania/my-tdl-project/src/TaskObject.ts";
+import { TaskObject } from "./components/TaskObject.ts";
 import List from "./components/List";
 
 function App() {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TaskObject } from "C:/Users/dania/my-tdl-project/src/TaskObject.ts";
+import { TaskObject } from "./TaskObject.ts";
 
 interface TaskProp {
   task: TaskObject;

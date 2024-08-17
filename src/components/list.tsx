@@ -1,5 +1,5 @@
 import Task from "./Task";
-import { TaskObject } from "C:/Users/dania/my-tdl-project/src/TaskObject.ts";
+import { TaskObject } from "./TaskObject.ts";
 
 interface ListProps {
   arrayOfTask: TaskObject[];
