@@ -1,22 +1,25 @@
-import Task from "./task";
+import Task from "./Task";
+import { TaskObject } from "C:/Users/dania/my-tdl-project/src/TaskObject.ts";
 
 interface ListProps {
-  tasks: string[];
+  arrayOfTask: TaskObject[];
+}
+function handleClickTask(item: string) {
+  console.log(item);
 }
 
-function List({ tasks }: ListProps) {
-
+function List({ arrayOfTask }: ListProps) {
   return (
-    <>
-      <div className="w-96 min-h-96 h-auto mb-12 mx-auto border-solid border-black border-8 bg-slate-400">
-        {tasks.map((task, index) => (
-          <Task
-            key={index}
-            text={task}
-          />
-        ))}
-      </div>
-    </>
+    <div className="w-96 min-h-96 h-auto mb-12 mx-auto border-solid border-black border-8 bg-slate-400">
+      {arrayOfTask.map((mappedTask, index) => (
+        <Task
+          key={index}
+          index={index}
+          task={mappedTask}
+          onClickTask={handleClickTask}
+        />
+      ))}
+    </div>
   );
 }
 
