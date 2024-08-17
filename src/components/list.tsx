@@ -5,9 +5,6 @@ interface ListProps {
 }
 
 function List({ tasks }: ListProps) {
-  function handleClickTask(item: string) {
-    console.log(item);
-  }
 
   return (
     <>
@@ -15,9 +12,7 @@ function List({ tasks }: ListProps) {
         {tasks.map((task, index) => (
           <Task
             key={index}
-            index={index}
             text={task}
-            onClickTask={handleClickTask}
           />
         ))}
       </div>
