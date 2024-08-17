@@ -1,35 +1,28 @@
-import { useState, useEffect } from "react";
-import New from "./components/new";
-import List from "./components/list";
+import { useEffect, useState } from "react";
+import NewTask from "./components/NewTask";
+import { TaskObject } from "C:/Users/dania/my-tdl-project/src/TaskObject.ts";
+import List from "./components/List";
 
 function App() {
-  //Initialize state from local storage or an empty array if none exist
-  const [tasks, setTasks] = useState<string[]>(() => {
-    const localStorageTasks = localStorage.getItem("tasks");
-    return localStorageTasks ? JSON.parse(localStorageTasks) : [];
+  const [taskArray, setTaskArray] = useState<TaskObject[]>(() => {
+    const localStorageTaskArray = localStorage.getItem("tasks");
+    return localStorageTaskArray ? JSON.parse(localStorageTaskArray) : [];
   });
 
-  //Save existing task to local storage whenever the state changes
   useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
-  //When tasks state is updated, the update tasks array is uploaded into local storage
+    localStorage.setItem("tasks", JSON.stringify(taskArray));
+  }, [taskArray]);
 
-  function addTask(task: string) {
+  function addTask(task: TaskObject) {
     if (task) {
-      setTasks([...tasks, task]);
-      //"...tasks" is the spread operator, it spreads the elements of the tasks-array into a new array
-      //setTasks  updates the state with the new array, effectively adding the new task to the list
-      //const numbers = [1, 2, 3];
-      //const moreNumbers = [...numbers, 4]; // moreNumbers becomes [1, 2, 3, 4]
-      //If numbers=[], then moreNumbers=[4]
+      setTaskArray([...taskArray, task]);
     }
   }
 
   return (
     <>
-      <New onAddTask={addTask} />
-      <List tasks={tasks} />
+      <NewTask onAddTask={addTask} />
+      <List arrayOfTask={taskArray} />
     </>
   );
 }
