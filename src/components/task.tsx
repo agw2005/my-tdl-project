@@ -21,8 +21,8 @@ function Task({ text, index, onClickTask }: TaskProp) {
     <p
       className={`p-1 bg-gray-800 hover:bg-gray-500 text-white text-xs ${ifMarked()}`}
       onClick={() => {
-        console.log(index);
-        onClickTask("Hello");
+        console.log(`Item number: ${index}`);
+        onClickTask("Clicked");
         ifMarked() ? setMarked(false) : setMarked(true);
       }}
     >
